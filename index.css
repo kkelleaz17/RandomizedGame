@@ -1,0 +1,160 @@
+
+:root{
+    --TIME:.2s
+}
+
+
+body{
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: black;
+}
+
+
+.BOARD{
+    display: grid;
+    width: 500px;
+    height: 500px;
+    grid-template-columns: repeat(3,calc(500px/3));
+    grid-template-rows: repeat(3,calc(500px/3));
+    position: relative;
+}
+
+
+
+
+
+.BOARD div button{
+    position: absolute;
+    background-color: transparent;
+    font-size: 20px;
+    border: 0px;
+    color: white;
+    z-index: 1;
+}
+.RIGHT{
+    right: 0px;
+    height: 100%;
+    width: 25px;
+}
+
+.LEFT{
+left:0px;
+height: 100%;
+width: 25px;
+transform: rotate(180deg);
+}
+.TOP{
+left:0px;
+top:0px;
+height: 20px;
+width: 100%;
+}
+.TOP i{
+  transform: rotate(270deg);
+}
+.BOTTOM i{
+  transform: rotate(90deg); 
+}
+.BOTTOM{
+    left:0px;
+    bottom:0px;
+    height: 20px;
+    width: 100%;
+}
+.ROTATE{
+    top:42%;
+    left: 41%;
+}
+
+
+
+
+
+
+
+
+.BOARD div{
+    background-color: gray;
+    position: relative;
+}
+.BOARD div img{
+    width: 100%;
+    height: 100%;
+}
+.SCORES{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    height: 50px;
+    color:white;
+    font-size: 25px;
+}
+.BUTTONS{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 50px;
+}
+.BUTTONS button{
+    height: 100%;
+    width: calc(500px / 3);
+}
+
+
+
+
+.MOVEMENT1{
+    animation: MOVEMENT1 var(--TIME) ease-in-out forwards;
+  }
+  
+  @keyframes MOVEMENT1{
+    0%{transform: rotate(0deg)}
+    100%{  transform: rotate(90deg)}
+  }
+  
+  .MOVEMENT2{
+    animation: MOVEMENT2 var(--TIME) ease-in-out forwards;
+  }
+
+  @keyframes MOVEMENT2{
+    0%{transform: rotate(90deg)}
+    100%{  transform: rotate(180deg)}
+  }
+  .MOVEMENT3{
+    animation: MOVEMENT3 var(--TIME) ease-in-out forwards;
+  }
+  
+  @keyframes MOVEMENT3{
+    0%{transform: rotate(180deg)}
+    100%{  transform: rotate(270deg)}
+  }
+  
+  
+  .MOVEMENT4{
+    animation: MOVEMENT4 var(--TIME) ease-in-out forwards;
+  }
+  
+  @keyframes MOVEMENT4{
+    0%{transform: rotate(270deg)}
+    100%{  transform: rotate(360deg)}
+  }
+
+.WINNER{
+  animation: WINNER .5s ease-in-out backwards;
+}
+
+
+
+@keyframes WINNER {
+  0%{transform: rotateY(-90deg)}
+  100%{transform: rotateY(0deg)}
+}
+
+
