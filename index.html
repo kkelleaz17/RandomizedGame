@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Puzzles</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js" defer></script>
     <script src="https://kit.fontawesome.com/a20dda123e.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -16,62 +16,38 @@
  </div>
  <div class="BOARD">
    <div>
-     <img id="IMG1" src="" class="">
-     <button id="IMG-OB1" class="RIGHT" onclick="SWITICH(1,2)"><i class="fa-solid fa-arrow-right"></i></button>
-     <button id="IMG-OB2" class="BOTTOM" onclick="SWITICH(1,4)"><i class="fa-solid fa-arrow-right"></i></button>
-     <button id="IMG-OB3" class="ROTATE" onclick="ROTATE(1)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+     <img id="IMG1" src="" class="" ondrop="DROP(event)" ondragover="allowDrop(event)" ondrag="ONDRAG(event)">
+     <button id="IMG-OB1" class="ROTATE" onclick="ROTATE(1)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
    </div>
    <div>
-    <img id="IMG2" src="" class="">
-    <button id="IMG-OB4" class="LEFT" onclick="SWITICH(2,1)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB5" class="RIGHT" onclick="SWITICH(2,3)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB6" class="BOTTOM" onclick="SWITICH(2,5)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB7" class="ROTATE" onclick="ROTATE(2)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+    <img id="IMG2" src="" class="" ondrop="DROP(event)" ondragover="allowDrop(event)" ondrag="ONDRAG(event)">
+    <button id="IMG-OB2" class="ROTATE" onclick="ROTATE(2)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
 </div>
    <div>
-    <img id="IMG3" src="" class=""> 
-    <button id="IMG-OB8" class="LEFT" onclick="SWITICH(3,2)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB9" class="BOTTOM" onclick="SWITICH(3,6)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB10" class="ROTATE" onclick="ROTATE(3)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+    <img id="IMG3" src="" class="" ondrop="DROP(event)" ondragover="allowDrop(event)" ondrag="ONDRAG(event)"> 
+    <button id="IMG-OB3" class="ROTATE" onclick="ROTATE(3)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
 </div>
 <div>
-    <img id="IMG4" src="" class=""> 
-    <button id="IMG-OB11" class="RIGHT" onclick="SWITICH(4,5)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB12" class="TOP" onclick="SWITICH(4,1)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB13" class="BOTTOM" onclick="SWITICH(4,7)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB14" class="ROTATE" onclick="ROTATE(4)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+    <img id="IMG4" src="" class="" ondrop="DROP(event)" ondragover="allowDrop(event)" ondrag="ONDRAG(event)"> 
+    <button id="IMG-OB4" class="ROTATE" onclick="ROTATE(4)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
 </div>
-   <div><img id="IMG5" src="" class=""> 
-    <button id="IMG-OB15" class="LEFT" onclick="SWITICH(5,4)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB16" class="RIGHT" onclick="SWITICH(5,6)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB17" class="TOP" onclick="SWITICH(5,2)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB18" class="BOTTOM" onclick="SWITICH(5,8)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB19" class="ROTATE" onclick="ROTATE(5)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+   <div><img id="IMG5" src="" class="" ondrop="DROP(event)" ondragover="allowDrop(event)" ondrag="ONDRAG(event)"> 
+    <button id="IMG-OB5" class="ROTATE" onclick="ROTATE(5)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
 </div>
-   <div><img id="IMG6" src="" class=""> 
-    <button id="IMG-OB20" class="LEFT" onclick="SWITICH(6,5)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB21" class="TOP" onclick="SWITICH(6,3)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB22" class="BOTTOM" onclick="SWITICH(6,9)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB23" class="ROTATE" onclick="ROTATE(6)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+   <div><img id="IMG6" src="" class="" ondrop="DROP(event)" ondragover="allowDrop(event)" ondrag="ONDRAG(event)"> 
+    <button id="IMG-OB6" class="ROTATE" onclick="ROTATE(6)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
 </div>
 <div>
-    <img id="IMG7" src="" class=""> 
-    <button id="IMG-OB24" class="RIGHT" onclick="SWITICH(7,8)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB25" class="TOP" onclick="SWITICH(7,4)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB26" class="ROTATE" onclick="ROTATE(7)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+    <img id="IMG7" src="" class="" ondrop="DROP(event)" ondragover="allowDrop(event)" ondrag="ONDRAG(event)"> 
+    <button id="IMG-OB7" class="ROTATE" onclick="ROTATE(7)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
 </div>
 <div>
-    <img id="IMG8" src="" class="">
-    <button id="IMG-OB27" class="LEFT" onclick="SWITICH(8,7)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB28" class="RIGHT" onclick="SWITICH(8,9)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB29" class="TOP" onclick="SWITICH(8,5)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB30" class="ROTATE" onclick="ROTATE(8)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+    <img id="IMG8" src="" class="" ondrop="DROP(event)" ondragover="allowDrop(event)" ondrag="ONDRAG(event)">
+    <button id="IMG-OB8" class="ROTATE" onclick="ROTATE(8)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
 </div>
    <div>
-    <img id="IMG9" src="" class=""> 
-    <button id="IMG-OB31" class="LEFT" onclick="SWITICH(9,8)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB32" class="TOP" onclick="SWITICH(9,6)"><i class="fa-solid fa-arrow-right"></i></button>
-    <button id="IMG-OB33" class="ROTATE" onclick="ROTATE(9)"><i class="fa-solid fa-arrow-rotate-left"></i></button></div>
+    <img id="IMG9" src="" class="" ondrop="DROP(event)" ondragover="allowDrop(event)" ondrag="ONDRAG(event)"> 
+    <button id="IMG-OB9" class="ROTATE" onclick="ROTATE(9)"><i class="fa-solid fa-arrow-rotate-left"></i></button></div>
  </div>
  <div class="BUTTONS">
        <button id="COMPLETE">Complete</button>
