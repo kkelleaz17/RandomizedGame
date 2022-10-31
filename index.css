@@ -28,60 +28,39 @@ body{
 
 
 
-.BOARD div button{
-    position: absolute;
-    background-color: transparent;
-    font-size: 20px;
-    border: 0px;
-    color: white;
-    z-index: 1;
-}
-.RIGHT{
-    right: 0px;
-    height: 100%;
-    width: 25px;
-}
 
-.LEFT{
-left:0px;
-height: 100%;
-width: 25px;
-transform: rotate(180deg);
-}
-.TOP{
-left:0px;
-top:0px;
-height: 20px;
-width: 100%;
-}
-.TOP i{
-  transform: rotate(270deg);
-}
-.BOTTOM i{
-  transform: rotate(90deg); 
-}
-.BOTTOM{
-    left:0px;
-    bottom:0px;
-    height: 20px;
-    width: 100%;
-}
+
 .ROTATE{
-    top:42%;
-    left: 41%;
+  background-color: transparent;
+  font-size: 20px;
+  border: 0px;
+  color: white;
+  z-index: 1;
+  position: absolute;
+  font-size: 70px;
 }
 
+.ROTATE:hover{
+  animation: ROTATEBUTTON 2s linear infinite;
+}
 
-
-
+@keyframes ROTATEBUTTON {
+  0%{  transform: rotateZ(360deg);}
+  100%{  transform: rotateZ(0deg);}
+}
 
 
 
 
 .BOARD div{
     background-color: gray;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+
 .BOARD div img{
     width: 100%;
     height: 100%;
