@@ -36,7 +36,7 @@ function RandomPictures(PN){
         do {
             var RND = RN(9);
         }while(OPEN.includes(RND) == true);
-        var FILELOCATION = "/media/Puzzle"+PN+"/image_part_00"+RND+".jpg"
+        var FILELOCATION = "/Puzzle"+PN+"/image_part_00"+RND+".jpg"
         document.getElementById("IMG"+i).src = FILELOCATION;
         document.getElementById("IMG"+i).classList.add("MOVEMENT"+RN(4));
         OPEN=OPEN+RND;
