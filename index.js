@@ -43,8 +43,8 @@ function RandomPictures(PN){
 }else{
     if(PUZZLELIST.length+1 == PUZZLELENGTH){
         PUZZLELIST = [];
-        RandomPictures(RN(PUZZLELENGTH));
     }
+     RandomPictures(RN(PUZZLELENGTH));
 }
 }
 function ROTATE(PICTURE){
