@@ -1,6 +1,7 @@
-
 :root{
-    --TIME:.2s
+    --TIME:.2s;
+    --BACK1:#141e30;
+    --BACK2:#243b55;
 }
 
 
@@ -8,10 +9,10 @@ body{
     margin: 0px;
     display: flex;
     justify-content: center;
+    background-image: linear-gradient(to right,var(--BACK1),var(--BACK2));
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background-color: black;
 }
 
 
@@ -46,14 +47,13 @@ body{
 
 @keyframes ROTATEBUTTON {
   0%{  transform: rotateZ(360deg);}
-  100%{  transform: rotateZ(0deg);}
+  100%{  transform: rotateZ(-0deg);}
 }
 
 
 
 
 .BOARD div{
-    background-color: gray;
     display: flex;
     justify-content: center;
     align-items: center;
