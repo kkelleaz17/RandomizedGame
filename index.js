@@ -27,7 +27,6 @@ REMOVEOB(1,9,"none");
 
 function RandomPictures(PN){
     if(PUZZLELIST.includes(PN) == false && PUZZLELIST.length != PUZZLELENGTH){
-        PUZZLELIST.push(PN);
     PUZZLENUMBER = PN;
     document.getElementById("PUZZ").innerHTML = "Puzzle: "+PUZZLENUMBER;
     var OPEN = "";
@@ -35,16 +34,16 @@ function RandomPictures(PN){
         do {
             var RND = RN(9);
         }while(OPEN.includes(RND) == true);
-        var FILELOCATION = "./Puzzle"+PN+"/image_part_00"+RND+".jpg"
+        var FILELOCATION = "./media/Puzzle"+PN+"/image_part_00"+RND+".jpg";
         document.getElementById("IMG"+i).src = FILELOCATION;
         document.getElementById("IMG"+i).classList.add("MOVEMENT"+RN(4));
         OPEN=OPEN+RND;
     }
 }else{
-    if(PUZZLELIST.length+1 == PUZZLELENGTH){
+    if(PUZZLELIST.length == PUZZLELENGTH){
         PUZZLELIST = [];
     }
-     RandomPictures(RN(PUZZLELENGTH));
+    RandomPictures(RN(PUZZLELENGTH));
 }
 }
 function ROTATE(PICTURE){
@@ -65,6 +64,7 @@ else if(CP.classList.contains("MOVEMENT4") == true){
     CP.classList.add("MOVEMENT1");
 }
 REMOVEOB(1,9,"none");
+CEHCKWIN();
 }
 document.getElementById("IMG1").addEventListener("click",(e)=>{REMOVEOB(1,9,"none");REMOVEOB(1,1,"");});
 document.getElementById("IMG2").addEventListener("click",(e)=>{REMOVEOB(1,9,"none");REMOVEOB(2,2,"");});
@@ -75,8 +75,9 @@ document.getElementById("IMG6").addEventListener("click",(e)=>{REMOVEOB(1,9,"non
 document.getElementById("IMG7").addEventListener("click",(e)=>{REMOVEOB(1,9,"none");REMOVEOB(7,7,"");});
 document.getElementById("IMG8").addEventListener("click",(e)=>{REMOVEOB(1,9,"none");REMOVEOB(8,8,"");});
 document.getElementById("IMG9").addEventListener("click",(e)=>{REMOVEOB(1,9,"none");REMOVEOB(9,9,"");});
-document.getElementById('COMPLETE').addEventListener("click",()=>{
-     var CHECK = 0;
+
+function CEHCKWIN(){
+    var CHECK = 0;
  for(let i = 1;i<10;i++){
     var ORIGIN = document.getElementById("IMG"+i)
     var NORMAL = ORIGIN.src;
@@ -85,10 +86,12 @@ document.getElementById('COMPLETE').addEventListener("click",()=>{
      }   
  }
  if(CHECK == 9){
+    PUZZLELIST.push(PUZZLENUMBER);
     SCORE++;
     for(let j = 1;j<10;j++){
             document.getElementById("IMG"+j).className = "WINNER";      
     }
+    
     setTimeout(()=>{
         for(let h = 1;h<10;h++){
             document.getElementById("IMG"+h).className = "";      
@@ -97,16 +100,50 @@ document.getElementById('COMPLETE').addEventListener("click",()=>{
     },1000)
  }
 document.getElementById("SCORE").innerHTML = "Score: "+SCORE;
-})
+}
+
+
 
 document.getElementById("RESET").addEventListener("click",()=>{
-    RandomPictures(RN(PUZZLELENGTH));
+    RandomPictures(PUZZLENUMBER);
 })
 
 
 document.getElementById("NEW").addEventListener("click",()=>{
     RandomPictures(RN(PUZZLELENGTH));
 })
+
+
+document.getElementById("THEME").addEventListener("click",()=>{
+    console.log("COOL")
+    var rs = getComputedStyle(document.querySelector(':root'));
+    if(rs.getPropertyValue('--BACK1') == '#141e30'){
+        COLORCHANGE("#ffafbd","#ffc3a0")
+    }
+    else if(rs.getPropertyValue('--BACK1') == '#ffafbd'){
+        COLORCHANGE("#cc2b5e","#753a88")
+    }
+    else if(rs.getPropertyValue('--BACK1') == '#cc2b5e'){
+        COLORCHANGE("#ff5e62","#ff9966")
+    }
+    else if(rs.getPropertyValue('--BACK1') == '#ff5e62'){
+        COLORCHANGE("#141e30","#243b55")
+    }
+    
+
+})
+function COLORCHANGE(A,B){
+    var ROOT = document.querySelector(':root');
+    ROOT.style.setProperty('--BACK1', A);
+    ROOT.style.setProperty('--BACK2', B);
+}
+
+
+
+
+
+
+
 function REMOVEOB(MIN,MAX,ITEM){
 for(let i = MIN;i<MAX+1;i++){
 document.getElementById("IMG-OB"+i).style.display = ITEM;
@@ -119,9 +156,12 @@ function DROP(e){
 PICTUREID2 = e.target.id;
 SWITCHPICTURES()
 }
+
 function allowDrop(event) {
   event.preventDefault();
 }
+
+
 function SWITCHPICTURES(){
 REMOVEOB(1,9,"none");
 var ELEM1 =document.getElementById(PICTUREID1);
@@ -140,4 +180,5 @@ document.getElementById(PICTUREID1).src = A;
 document.getElementById(PICTUREID2).src = B;
 document.getElementById(PICTUREID2).className = ACLASS;
 document.getElementById(PICTUREID2).className = BCLASS;
+CEHCKWIN();
 }
