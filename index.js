@@ -64,7 +64,7 @@ else if(CP.classList.contains("MOVEMENT4") == true){
     CP.classList.add("MOVEMENT1");
 }
 REMOVEOB(1,9,"none");
-CEHCKWIN();
+CHECKWIN()
 }
 document.getElementById("IMG1").addEventListener("click",(e)=>{REMOVEOB(1,9,"none");REMOVEOB(1,1,"");});
 document.getElementById("IMG2").addEventListener("click",(e)=>{REMOVEOB(1,9,"none");REMOVEOB(2,2,"");});
@@ -76,7 +76,7 @@ document.getElementById("IMG7").addEventListener("click",(e)=>{REMOVEOB(1,9,"non
 document.getElementById("IMG8").addEventListener("click",(e)=>{REMOVEOB(1,9,"none");REMOVEOB(8,8,"");});
 document.getElementById("IMG9").addEventListener("click",(e)=>{REMOVEOB(1,9,"none");REMOVEOB(9,9,"");});
 
-function CEHCKWIN(){
+function CHECKWIN(){
     var CHECK = 0;
  for(let i = 1;i<10;i++){
     var ORIGIN = document.getElementById("IMG"+i)
@@ -180,5 +180,5 @@ document.getElementById(PICTUREID1).src = A;
 document.getElementById(PICTUREID2).src = B;
 document.getElementById(PICTUREID2).className = ACLASS;
 document.getElementById(PICTUREID2).className = BCLASS;
-CEHCKWIN();
+CHECKWIN()
 }
