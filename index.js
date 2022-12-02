@@ -64,7 +64,7 @@ else if(CP.classList.contains("MOVEMENT4") == true){
     CP.classList.add("MOVEMENT1");
 }
 REMOVEOB(1,9,"none");
-CHECKWIN()
+CHECKWIN();
 }
 document.getElementById("IMG1").addEventListener("click",(e)=>{REMOVEOB(1,9,"none");REMOVEOB(1,1,"");});
 document.getElementById("IMG2").addEventListener("click",(e)=>{REMOVEOB(1,9,"none");REMOVEOB(2,2,"");});
@@ -115,7 +115,6 @@ document.getElementById("NEW").addEventListener("click",()=>{
 
 
 document.getElementById("THEME").addEventListener("click",()=>{
-    console.log("COOL")
     var rs = getComputedStyle(document.querySelector(':root'));
     if(rs.getPropertyValue('--BACK1') == '#141e30'){
         COLORCHANGE("#ffafbd","#ffc3a0")
@@ -180,5 +179,5 @@ document.getElementById(PICTUREID1).src = A;
 document.getElementById(PICTUREID2).src = B;
 document.getElementById(PICTUREID2).className = ACLASS;
 document.getElementById(PICTUREID2).className = BCLASS;
-CHECKWIN()
+CHECKWIN();
 }
