@@ -104,38 +104,7 @@ document.getElementById("SCORE").innerHTML = "Score: "+SCORE;
 
 
 
-document.getElementById("RESET").addEventListener("click",()=>{
-    RandomPictures(PUZZLENUMBER);
-})
 
-
-document.getElementById("NEW").addEventListener("click",()=>{
-    RandomPictures(RN(PUZZLELENGTH));
-})
-
-
-document.getElementById("THEME").addEventListener("click",()=>{
-    var rs = getComputedStyle(document.querySelector(':root'));
-    if(rs.getPropertyValue('--BACK1') == '#141e30'){
-        COLORCHANGE("#ffafbd","#ffc3a0")
-    }
-    else if(rs.getPropertyValue('--BACK1') == '#ffafbd'){
-        COLORCHANGE("#cc2b5e","#753a88")
-    }
-    else if(rs.getPropertyValue('--BACK1') == '#cc2b5e'){
-        COLORCHANGE("#ff5e62","#ff9966")
-    }
-    else if(rs.getPropertyValue('--BACK1') == '#ff5e62'){
-        COLORCHANGE("#141e30","#243b55")
-    }
-    
-
-})
-function COLORCHANGE(A,B){
-    var ROOT = document.querySelector(':root');
-    ROOT.style.setProperty('--BACK1', A);
-    ROOT.style.setProperty('--BACK2', B);
-}
 
 
 
